@@ -8,7 +8,8 @@
     <script>
       (() => {
         const param = new URLSearchParams(window.location.search).get("clawpilotTheme");
-        document.documentElement.setAttribute("data-theme", param === "dark" ? "dark" : "light");
+        const theme = window.frameElement?.dataset.theme ?? param;
+        document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
       })();
     </script>
     <link rel="stylesheet" href="/src/style.css" />

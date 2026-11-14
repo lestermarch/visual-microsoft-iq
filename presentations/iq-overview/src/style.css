@@ -11,6 +11,7 @@
 .iq-layer-label { white-space: nowrap; color: var(--cp-white); }
 .iq-layer-label strong { display: block; font-size: 31px; font-weight: 600; letter-spacing: -.8px; }
 .iq-layer-label small { display: block; margin-top: 3px; font-size: 6px; letter-spacing: 1.6px; }
+html[data-theme="dark"] .iq-layer-label { color: var(--cp-bg); }
 .iq-layer-label.highlighted strong { text-shadow: 0 0 24px var(--cp-panel); }
 .iq-names { font-size: 10px; font-weight: 600; color: var(--cp-text-muted); white-space: nowrap; opacity: 0; transition: opacity .6s; padding: 3px 8px; border-radius: 4px; background: var(--cp-bg); }
 .iq-names span { margin: 0 5px; color: var(--cp-teal); }

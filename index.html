@@ -6,7 +6,10 @@
     <meta name="theme-color" content="#f5f9fd" />
     <meta name="description" content="A Microsoft IQ overview followed by Work IQ, Fabric IQ, Foundry IQ and Web IQ, surrounded by Microsoft security and governance." />
     <title>Microsoft IQ - Intelligence, connected</title>
-    <script>document.documentElement.setAttribute('data-theme', 'light');</script>
+    <script>
+      document.documentElement.dataset.theme =
+        new URLSearchParams(window.location.search).get('clawpilotTheme') === 'dark' ? 'dark' : 'light';
+    </script>
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
@@ -19,6 +22,7 @@
         <nav class="suite-menu" id="iq-menu" aria-label="Presentation sections"></nav>
         <div class="suite-tools">
           <button id="restart-suite" class="suite-tool" title="Start again at the overview (Home)">Restart</button>
+          <button id="theme-suite" class="suite-tool" aria-pressed="false" aria-label="Use dark mode">Dark mode</button>
           <button id="motion-suite" class="suite-tool" aria-pressed="false">Reduce motion</button>
           <button id="fullscreen-suite" class="suite-tool" title="Fullscreen (F)" aria-label="Enter fullscreen">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5M4 15v5h5m11-5v5h-5"/></svg>

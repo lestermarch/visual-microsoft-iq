@@ -17,6 +17,9 @@ fonts, images or external APIs required.
 - **Space, Right or Page Down** advance; **Left, Page Up or Shift+Space** go back.
 - **Home** restarts at the overview; **End** jumps to the final Security subsection.
 - **F** toggles fullscreen. **Reduce motion** freezes ambient animation.
+- **Dark mode / Light mode** switches the complete deck's palette without moving
+  the selected subsection. Light remains the default; `?clawpilotTheme=dark`
+  opens directly in dark mode. The choice stays in effect while the app is open.
 - The top menu jumps to the first subsection of the overview, any IQ or Security.
 - Chapter cards inside a presentation remain clickable and update the global
   navigation. Foundry's query and Web's grounding example also stay available.
@@ -25,6 +28,13 @@ Navigation never wraps silently: Previous is disabled at the first step, and
 Next is disabled at the final step. Restart explicitly returns to the beginning.
 Keyboard shortcuts also work after focusing the embedded presentation.
 Only one presentation and WebGL scene are loaded at a time.
+
+Page boundaries use a soft fade out and in; chapter changes retain their
+existing highlights. Reduced motion disables these fades. Rapid navigation
+replaces pending page changes with the latest destination. Changing the palette
+rebuilds only the current scene so both HTML and Three.js colours use the selected
+theme, preserving the subsection and reduced-motion setting. This also resets
+the current scene's ambient animation and interactive examples.
 
 ## Develop
 

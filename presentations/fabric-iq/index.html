@@ -9,7 +9,7 @@
     <script>
       (() => {
         const param = new URLSearchParams(window.location.search).get("clawpilotTheme");
-        document.documentElement.setAttribute("data-theme", param || "light");
+        document.documentElement.setAttribute("data-theme", window.frameElement?.dataset.theme ?? param ?? "light");
       })();
     </script>
     <link rel="stylesheet" href="/src/style.css" />
