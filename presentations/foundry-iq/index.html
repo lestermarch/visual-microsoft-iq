@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f9fd" />
+    <meta name="description" content="A two-minute animated Foundry IQ presentation: knowledge sources, document extraction, chunking, embeddings, semantic retrieval, and reusable knowledge bases." />
+    <title>Foundry IQ - From content to context</title>
+    <script>
+      (() => {
+        const param = new URLSearchParams(window.location.search).get("clawpilotTheme");
+        document.documentElement.setAttribute("data-theme", param || "light");
+      })();
+    </script>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main class="presentation foundry-presentation" id="presentation">
+      <header class="masthead">
+        <a class="brand" href="#" aria-label="Reset Foundry IQ presentation">
+          <span class="microsoft-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span>Microsoft <span class="brand-divider">/</span> <strong>Foundry IQ</strong></span>
+        </a>
+        <span class="edition">THE KNOWLEDGE LAYER FOR AGENTS <span class="live-dot"></span></span>
+      </header>
+
+      <section class="headline" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">CONNECTED KNOWLEDGE. REUSABLE CONTEXT. GROUNDED AGENTS.</p>
+          <h1 id="page-title">Foundry <span>IQ</span><span class="title-period">.</span></h1>
+        </div>
+        <p class="hero-description">From enterprise content.<br />To <strong>context agents can use.</strong></p>
+      </section>
+
+      <div class="main-content">
+        <section class="rag-visual" aria-label="An illustrated RAG pipeline: named knowledge sources, document extraction, chunking, embedding, a semantic vector index, and a reusable knowledge base shared by agents.">
+          <div class="scene-halo" aria-hidden="true"></div>
+          <div class="source-heading"><span class="eyebrow">KNOWLEDGE SOURCES</span><span>Indexed content <i>+</i> remote connections</span></div>
+          <div class="source-rail" aria-label="Example knowledge source connections">
+            <div class="source-chip"><span class="source-mark blob-mark">B</span><span><strong>Blob &amp; files</strong><small>INDEXED</small></span></div>
+            <div class="source-chip"><span class="source-mark lake-mark">&#8776;</span><span><strong>OneLake</strong><small>INDEXED</small></span></div>
+            <div class="source-chip remote-source"><span class="source-mark sharepoint-mark">S</span><span><strong>SharePoint</strong><small>REMOTE EXAMPLE</small></span></div>
+          </div>
+
+          <svg class="pipeline-wires" viewBox="0 0 800 580" preserveAspectRatio="none" fill="none" aria-hidden="true">
+            <defs>
+              <marker id="arrow-blue" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="m1 1 4 2-4 2" fill="none" stroke="var(--cp-cyan)" stroke-width="1"/></marker>
+              <marker id="arrow-violet" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="m1 1 4 2-4 2" fill="none" stroke="var(--cp-foundry)" stroke-width="1"/></marker>
+            </defs>
+            <path class="indexed-wire" d="M265 70C265 99 125 82 125 123" marker-end="url(#arrow-blue)"/>
+            <path class="indexed-wire" d="M125 165C125 193 180 171 180 211" marker-end="url(#arrow-blue)"/>
+            <path class="indexed-wire" d="M180 248C180 277 235 249 235 291" marker-end="url(#arrow-blue)"/>
+            <path class="embedding-wire" d="M295 326C375 326 358 232 450 232" marker-end="url(#arrow-violet)"/>
+            <path class="reference-wire" d="M565 310C565 375 482 366 482 443" marker-end="url(#arrow-violet)"/>
+            <path class="remote-wire" d="M680 67C792 67 770 247 770 350S740 398 715 444" marker-end="url(#arrow-violet)"/>
+          </svg>
+          <span class="indexed-path-label">INDEXED SOURCE PATH</span>
+          <span class="remote-path-label">QUERY IN PLACE</span>
+
+          <div class="ingestion-lane" aria-hidden="true">
+            <div class="pipeline-step extract-step" data-step="extract">
+              <span class="step-number">01</span>
+              <div class="mini-document"><span class="document-fold"></span><b>POLICY</b><i></i><i></i><i></i><i></i><span class="scan-beam"></span></div>
+              <span class="step-copy"><strong>Extract</strong><small>Text &amp; structure</small></span>
+            </div>
+            <div class="pipeline-step chunk-step" data-step="chunk">
+              <span class="step-number">02</span>
+              <div class="chunk-stack"><i><span></span><span></span></i><i><span></span><span></span></i><i><span></span><span></span></i></div>
+              <span class="step-copy"><strong>Chunk</strong><small>Passages + metadata</small></span>
+            </div>
+            <div class="pipeline-step embed-step" data-step="embed">
+              <span class="step-number">03</span>
+              <div class="embedding-matrix"><span>.12</span><span>-.34</span><span>.87</span><span>.06</span><span>.52</span><span>...</span></div>
+              <span class="step-copy"><strong>Embed</strong><small>Meaning &rarr; vectors</small></span>
+            </div>
+          </div>
+
+          <div class="vector-stage" role="img" aria-label="Simplified three-dimensional view of a high-dimensional vector index. A query approaches the people-policies cluster and finds three authorized nearby passages.">
+            <div class="space-heading"><span class="index-symbol" aria-hidden="true">&#9671;</span><span>SEMANTIC VECTOR INDEX<small>Azure AI Search &middot; text + vectors + metadata</small></span></div>
+            <div id="graph" class="graph" aria-hidden="true"></div>
+            <div id="space-labels" class="space-labels" aria-hidden="true"></div>
+            <span class="projection-note">Many dimensions. Shown here in 3D.</span>
+            <span class="space-legend"><i></i> People <i></i> Product <i></i> Operations</span>
+          </div>
+
+          <button class="query-card" id="demo-query" title="Run the illustrative semantic retrieval example">
+            <span class="query-spark" aria-hidden="true">&#10022;</span>
+            <span><small>QUERY &rarr; EMBEDDING</small><strong>Can I work away from the office?</strong></span>
+            <span class="query-arrow" aria-hidden="true">&rarr;</span>
+          </button>
+          <div class="context-card" id="context-card" aria-hidden="true">
+            <span class="context-tick">&#10003;</span><span><strong id="context-title">Relevant passages</strong><small id="context-detail">[1] Policy &nbsp; [2] Guide &nbsp; [3] FAQ</small></span>
+          </div>
+
+          <div class="knowledge-base" id="knowledge-base">
+            <div class="kb-heading"><span class="kb-symbol" aria-hidden="true">&#9707;</span><span><strong>Workplace knowledge</strong><small>REUSABLE KNOWLEDGE BASE</small></span><span class="kb-endpoint">ONE ENDPOINT</span></div>
+            <div class="kb-sources"><span>People policies <small>INDEXED</small></span><span>Team handbook <small>INDEXED</small></span><span>SharePoint <small>REMOTE</small></span></div>
+            <div class="kb-consumers"><span>Reuse across agents &rarr;</span><span class="consumer">HR assistant</span><span class="consumer">Support agent</span><span class="consumer">Copilot</span></div>
+          </div>
+
+          <div class="visual-caption"><span class="caption-line"></span><div><span id="visual-caption">Start with knowledge, wherever it lives.</span><strong id="visual-detail">A knowledge source is a connection, not a knowledge base.</strong></div></div>
+          <p id="render-error" class="render-error" hidden>3D rendering is unavailable. Enable hardware acceleration or use a WebGL-enabled browser. The pipeline, chapter controls, and explanations remain available.</p>
+        </section>
+
+        <section class="story" aria-labelledby="story-title">
+          <div class="story-heading"><span id="story-title" class="eyebrow">THE JOURNEY FROM CONTENT TO CONTEXT</span><span class="chapter-counter"><span id="chapter-number">01</span> <span>/ 06</span></span></div>
+          <div id="chapters" class="chapters"></div>
+          <div class="story-note"><span class="note-icon" aria-hidden="true">&#10003;</span> Connect once. Retrieve intelligently. Reuse broadly.</div>
+        </section>
+      </div>
+
+      <div class="takeaway"><span class="takeaway-prefix">THE BIG IDEA</span><span>Sources connect <strong>content.</strong></span><i aria-hidden="true">&rarr;</i><span>Knowledge bases package <strong>retrieval.</strong></span><i aria-hidden="true">&rarr;</i><span>Agents receive <strong>grounded context.</strong></span></div>
+
+      <footer class="transport">
+        <div class="transport-title"><span class="live-dot"></span><span id="playback-label">PRESENTATION READY</span></div>
+        <div class="transport-main">
+          <button id="play" class="play-button" aria-label="Play presentation" title="Play / pause (Space)"><svg id="play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m9 5 11 7-11 7Z"/></svg></button>
+          <button id="restart" class="icon-button" aria-label="Restart presentation" title="Restart (R)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10a8 8 0 1 1 .5 6M4 4v6h6"/></svg></button>
+          <span id="elapsed" class="time">0:00</span>
+          <div class="scrubber-wrap"><div class="chapter-ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><input id="scrubber" type="range" min="0" max="120" step="0.1" value="0" aria-label="Presentation position" aria-valuetext="0 minutes, 0 seconds" /></div>
+          <span class="time total-time">2:00</span>
+        </div>
+        <div class="view-controls">
+          <button id="motion" class="icon-button" aria-label="Reduce animation" aria-pressed="false" title="Reduce animation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h11a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h6"/></svg></button>
+          <button id="fullscreen" class="icon-button" aria-label="Enter fullscreen" title="Fullscreen (F)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5M4 15v5h5m11-5v5h-5"/></svg></button>
+        </div>
+      </footer>
+      <div class="footnotes">
+        <p class="keyboard-hint">SPACE to play / pause <span>&middot;</span> F for fullscreen <span>&middot;</span> Select a chapter or the query to explore</p>
+        <p class="architecture-note">Illustrative embeddings and indexed RAG path; remote sources query in place. <a href="https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/what-is-foundry-iq" target="_blank" rel="noopener noreferrer">Permissions require source support and configuration.</a></p>
+      </div>
+      <p id="announcement" class="sr-only" aria-live="polite"></p>
+      <p id="control-error" class="control-error" role="alert" hidden></p>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "microsoft-iq-presenter",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.12.0" },
+  "scripts": {
+    "predev": "npm run build:presentations",
+    "dev": "vite --host 127.0.0.1",
+    "build:presentations": "node scripts/build-presentations.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test tests/navigation.test.js presentations/work-iq/src/timeline.test.js presentations/fabric-iq/src/timeline.test.js presentations/foundry-iq/src/retrieval.test.js presentations/web-iq/src/timeline.test.js"
+  },
+  "dependencies": { "three": "0.180.0" },
+  "devDependencies": {
+    "vite": "7.1.7",
+    "vite-plugin-singlefile": "2.3.0"
+  }
+}

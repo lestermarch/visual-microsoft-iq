@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f9fd" />
+    <meta name="description" content="A two-minute animated Web IQ presentation: open web, licensed content and structured data, connected to agents." />
+    <title>Web IQ - A world beyond web pages</title>
+    <script>
+      (() => {
+        const param = new URLSearchParams(window.location.search).get("clawpilotTheme");
+        document.documentElement.setAttribute("data-theme", param === "dark" ? "dark" : "light");
+      })();
+    </script>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main class="presentation" id="presentation">
+      <header class="masthead">
+        <a class="brand" href="#" aria-label="Web IQ presentation home">
+          <span class="microsoft-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span>Microsoft <span class="brand-divider">/</span> <strong>Web IQ</strong></span>
+        </a>
+        <span class="edition">THE WORLD OUTSIDE YOUR ORGANISATION <span class="live-dot"></span></span>
+      </header>
+      <section class="headline" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">MORE THAN WEB PAGES.</p>
+          <h1 id="page-title">Web <span>IQ</span><span class="title-period">.</span></h1>
+        </div>
+        <p class="hero-description">A world of information.<br /><strong>Connected to your agents.</strong></p>
+      </section>
+
+      <div class="main-content">
+        <section class="intelligence-scene" aria-label="Rotating Web IQ information sphere with eight orbiting data cards">
+          <div class="scene-halo" aria-hidden="true"></div>
+          <div class="orbit-label"><span></span>WEB GROUNDING, BEYOND THE PAGE</div>
+          <div class="web-stage">
+            <div id="graph" class="graph" aria-hidden="true"></div>
+            <div class="web-core" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="16" cy="16" r="13"/><ellipse cx="16" cy="16" rx="6" ry="13"/><path d="M3 16h26M5 9h22M5 23h22"/></svg>
+              <strong>Web IQ</strong>
+              <span>A WORLD OF CONTEXT</span>
+            </div>
+            <div id="data-layer" class="data-layer" aria-hidden="true"></div>
+            <span class="sphere-note">OPEN <i></i> LICENSED <i></i> STRUCTURED</span>
+          </div>
+          <div class="context-panel">
+            <div class="context-heading">
+              <span class="context-spark" aria-hidden="true">&#10022;</span>
+              <span id="context-title">One connected world of information</span>
+              <button id="demo-grounding" title="Jump to the grounding example">Show grounding <span aria-hidden="true">&#8599;</span></button>
+            </div>
+            <div class="source-families">
+              <span class="family-open">Open web <small>Pages, news &amp; media</small></span>
+              <span class="family-licensed">Licensed web <small>Your licensed content</small></span>
+              <span class="family-structured">Structured data <small>Places, weather &amp; commerce</small></span>
+            </div>
+            <div class="answer-example" aria-label="Illustrative grounding example">
+              <span>Planning a visit?</span>
+              <b>[1] Place details</b><b>[2] Weather</b><b>[3] Recent news</b>
+            </div>
+          </div>
+          <div class="scene-caption"><span class="caption-line"></span><span><strong id="visual-caption"></strong><br /><span id="visual-detail"></span></span></div>
+          <p id="render-error" class="render-error" role="alert" hidden>3D rendering is unavailable. Try a WebGL-enabled browser with hardware acceleration. The chapter controls and text remain available.</p>
+        </section>
+
+        <section class="story" aria-labelledby="story-title">
+          <div class="story-heading">
+            <span id="story-title" class="eyebrow">A BROADER WORLD OF INTELLIGENCE</span>
+            <span class="chapter-counter"><span id="chapter-number">01</span> <span>/ 06</span></span>
+          </div>
+          <div id="chapters" class="chapters"></div>
+          <div class="story-note"><span class="note-icon" aria-hidden="true">&#10003;</span> Fresh context. Focused passages. Traceable sources.</div>
+        </section>
+      </div>
+
+      <footer class="transport">
+        <div class="transport-title"><span class="live-dot"></span><span id="playback-label">PRESENTATION READY</span></div>
+        <div class="transport-main">
+          <button id="play" class="play-button" aria-label="Play presentation" title="Play / pause (Space)">
+            <svg id="play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m9 5 11 7-11 7Z"/></svg>
+          </button>
+          <button id="restart" class="icon-button" aria-label="Restart presentation" title="Restart (R)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10a8 8 0 1 1 .5 6M4 4v6h6"/></svg>
+          </button>
+          <span id="elapsed" class="time">0:00</span>
+          <div class="scrubber-wrap">
+            <div class="chapter-ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <input id="scrubber" type="range" min="0" max="120" step="0.1" value="0" aria-label="Presentation position" aria-valuetext="0 minutes, 0 seconds" />
+          </div>
+          <span class="time total-time">2:00</span>
+        </div>
+        <div class="view-controls">
+          <button id="motion" class="icon-button motion-button" aria-label="Reduce animation" aria-pressed="false" title="Reduce animation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h11a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h6"/></svg>
+          </button>
+          <button id="fullscreen" class="icon-button" aria-label="Enter fullscreen" title="Fullscreen (F)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5M4 15v5h5m11-5v5h-5"/></svg>
+          </button>
+        </div>
+      </footer>
+      <p class="architecture-note">Conceptual illustration, not a live API demo. Example cards and source references are fictional. Coverage, licensing and availability vary by API and source.</p>
+      <p class="keyboard-hint">SPACE to play / pause <span>&middot;</span> F for fullscreen <span>&middot;</span> Select a chapter to jump</p>
+      <p id="announcement" class="sr-only" aria-live="polite"></p>
+      <p id="control-error" class="control-error" role="alert" hidden></p>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f9fd" />
+    <meta name="description" content="An end-to-end presenter for Work IQ, Fabric IQ, Foundry IQ and Web IQ." />
+    <title>Microsoft IQ - Intelligence, connected</title>
+    <script>document.documentElement.setAttribute('data-theme', 'light');</script>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main class="suite" id="suite">
+      <header class="suite-header">
+        <a href="#" class="suite-brand" id="home" aria-label="Restart at Work IQ">
+          <span class="microsoft-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span>Microsoft <strong>IQ</strong></span>
+        </a>
+        <nav class="suite-menu" id="iq-menu" aria-label="IQ presentations"></nav>
+        <div class="suite-tools">
+          <button id="restart-suite" class="suite-tool" title="Start again at Work IQ (Home)">Restart</button>
+          <button id="motion-suite" class="suite-tool" aria-pressed="false">Reduce motion</button>
+          <button id="fullscreen-suite" class="suite-tool" title="Fullscreen (F)" aria-label="Enter fullscreen">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5M4 15v5h5m11-5v5h-5"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <section class="suite-stage" aria-label="Current IQ presentation" id="stage">
+        <iframe id="deck-frame" title="Work IQ presentation"></iframe>
+        <div id="loading" class="suite-loading" role="status">Opening Work IQ...</div>
+        <div id="load-error" class="suite-error" role="alert" hidden>
+          <p id="load-error-message"></p>
+          <button id="retry" class="suite-button">Try again</button>
+        </div>
+      </section>
+
+      <footer class="suite-footer">
+        <div class="suite-context">
+          <p class="suite-position"><span id="current-iq">Work IQ</span><span id="local-position">01 / 05</span><span class="suite-mode">AT YOUR PACE</span></p>
+          <p class="suite-step" id="current-step">Intelligence</p>
+          <p class="suite-hint">Space / &#8594; / Page Down: next <span>&middot;</span> &#8592; / Page Up: previous <span>&middot;</span> F: fullscreen</p>
+        </div>
+        <div class="suite-actions">
+          <span class="suite-count"><strong id="step-number">01</strong> <span>/ <span id="step-total">22</span></span></span>
+          <button id="previous" class="suite-button" aria-label="Previous subsection"><span aria-hidden="true">&#8592;</span><span class="previous-label">Previous</span></button>
+          <button id="next" class="suite-button suite-next"><span id="next-label">Next</span><span aria-hidden="true">&#8594;</span></button>
+        </div>
+        <div class="suite-progress" id="suite-progress" role="progressbar" aria-label="Presentation position" aria-valuemin="1" aria-valuemax="22" aria-valuenow="1"><span></span></div>
+      </footer>
+      <p class="sr-only" id="suite-announcement" aria-live="polite"></p>
+      <p class="suite-control-error" id="suite-control-error" role="alert" hidden></p>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
