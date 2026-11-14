@@ -41,7 +41,7 @@ body { overflow: hidden; }
 .suite-next { background: var(--cp-azure); border-color: var(--cp-azure); color: var(--cp-white); min-width: 175px; justify-content: space-between; font-weight: 600; }
 .suite-next:hover:not(:disabled) { background: var(--cp-accent-hover); color: var(--cp-white); }
 .suite-progress { height: 3px; background: var(--cp-border); grid-column: 1 / -1; margin: 0 -28px; }
-.suite-progress > span { display: block; height: 100%; background: linear-gradient(90deg, var(--cp-azure), var(--cp-teal)); transform: scaleX(var(--suite-progress, .03704)); transform-origin: left; transition: transform .2s; }
+.suite-progress > span { display: block; height: 100%; background: linear-gradient(90deg, var(--cp-azure), var(--cp-teal)); transform: scaleX(var(--suite-progress, .03125)); transform-origin: left; transition: transform .2s; }
 .suite-control-error { position: fixed; bottom: 105px; left: 50%; transform: translateX(-50%); padding: 12px 20px; border: 1px solid var(--cp-danger); border-radius: 8px; color: var(--cp-danger); background: var(--cp-surface); z-index: 5; font-size: 13px; }
 @media (max-height: 820px) and (min-width: 1000px) {
   .suite-header { padding-top: 8px; padding-bottom: 8px; }
@@ -66,4 +66,8 @@ body { overflow: hidden; }
   .suite-button { padding: 11px; font-size: 11px; }
   .suite-next { min-width: 116px; max-width: 155px; }
   .suite-progress { margin: 0 -14px; }
+}
+@media (max-width: 480px) {
+  .suite-menu { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .suite-menu button { justify-content: center; }
 }

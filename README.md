@@ -1,7 +1,8 @@
 # Microsoft IQ presenter - v01
 
-A single, self-contained presenter app for Work IQ, Fabric IQ, Foundry IQ and
-Web IQ, followed by a Security & governance closing page. The 27 subsections
+A single, self-contained presenter app starting with a Microsoft IQ overview,
+then Work IQ, Fabric IQ, Foundry IQ and Web IQ, followed by a Security &
+governance closing page. The 32 subsections
 advance at the presenter's pace.
 Ambient 3D animations continue while the narrative remains on the selected step.
 The four original standalone presentations are preserved outside this folder.
@@ -9,14 +10,14 @@ The four original standalone presentations are preserved outside this folder.
 ## Present
 
 Open `dist\index.html` in a modern WebGL-enabled browser. The production build
-includes all five presentations and works offline, with no server, accounts,
+includes all six presentations and works offline, with no server, accounts,
 fonts, images or external APIs required.
 
 - **Next / Previous** move through every subsection, including IQ boundaries.
 - **Space, Right or Page Down** advance; **Left, Page Up or Shift+Space** go back.
-- **Home** restarts at Work IQ; **End** jumps to the final Security subsection.
+- **Home** restarts at the overview; **End** jumps to the final Security subsection.
 - **F** toggles fullscreen. **Reduce motion** freezes ambient animation.
-- The top menu jumps to the first subsection of any IQ or the Security page.
+- The top menu jumps to the first subsection of the overview, any IQ or Security.
 - Chapter cards inside a presentation remain clickable and update the global
   navigation. Foundry's query and Web's grounding example also stay available.
 
@@ -37,7 +38,7 @@ npm run build
 npm run preview
 ```
 
-`npm run dev` first compiles the five presentation documents. After editing a
+`npm run dev` first compiles the six presentation documents. After editing a
 presentation's source or the shared bridge, run `npm run build:presentations`
 again; the development server observes the generated documents. Shell changes
 are handled directly by Vite. `npm run build` always rebuilds everything.
@@ -72,6 +73,21 @@ preview qualifications still apply.
 
 Comments are reserved for non-obvious intent. Navigation rules, rendering,
 integration and build responsibilities are separated into named modules.
+
+## Microsoft IQ opening overview
+
+The opening page follows the supplied "Your people. Your agents. Your IQ."
+slide. Three raised source foundations sit below an IQ layer: collaboration,
+business data and curated knowledge. Animated paths connect them through the
+layer to people and agents above an interactive-to-autonomous continuum.
+Five chapters introduce the recipients, each foundation, then the complete IQ
+picture before Next moves into Work IQ. Labels stay stationary for readability.
+
+The layer is conceptual, not a new common data store or a promise that every IQ
+uses every source. The final chapter introduces the four IQs without collapsing
+their distinct roles. Original SVG symbols replace the reference's portrait and
+product artwork. The opening retains a two-minute standalone playback option;
+the combined presenter advances manually.
 
 ## Security & governance closing page
 

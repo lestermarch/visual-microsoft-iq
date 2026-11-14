@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your people. Your agents. Your IQ. Collaboration, business data and curated knowledge provide context for intelligence." />
+    <title>Microsoft IQ - Your people. Your agents. Your IQ.</title>
+    <script>
+      (() => {
+        const param = new URLSearchParams(window.location.search).get("clawpilotTheme");
+        document.documentElement.setAttribute("data-theme", param === "dark" ? "dark" : "light");
+      })();
+    </script>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main class="presentation overview-presentation">
+      <header class="masthead">
+        <a class="brand" href="#" aria-label="Restart the Microsoft IQ overview">
+          <span class="microsoft-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span>Microsoft <span class="brand-divider">/</span> <strong>IQ overview</strong></span>
+        </a>
+        <span class="edition">CONTEXT FOR PEOPLE AND AGENTS <span class="live-dot"></span></span>
+      </header>
+      <section class="headline" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">INTELLIGENCE, BUILT ON YOUR CONTEXT.</p>
+          <h1 id="page-title">Your people. Your agents.<br /><span>Your IQ</span><span class="title-period">.</span></h1>
+        </div>
+        <p class="hero-description">Connect what you know. <br /><strong>Empower what comes next.</strong></p>
+      </section>
+      <div class="main-content">
+        <section class="overview-visual" aria-label="Collaboration, business data and curated knowledge form three foundations beneath Your IQ. The IQ layer connects this context to people and agents, from interactive assistance to autonomous workflows.">
+          <div class="scene-halo" aria-hidden="true"></div>
+          <div class="overview-stage" aria-hidden="true">
+            <div id="graph" class="graph"></div>
+            <div id="overview-labels" class="overview-labels"></div>
+          </div>
+          <div class="scene-caption"><span class="caption-line"></span><span><strong id="visual-caption"></strong><br /><span id="visual-detail"></span></span></div>
+          <p id="render-error" class="render-error" role="alert" hidden>3D rendering is unavailable. Try a WebGL-enabled browser with hardware acceleration. The chapter controls and text remain available.</p>
+        </section>
+        <section class="story" aria-labelledby="story-title">
+          <div class="story-heading">
+            <span id="story-title" class="eyebrow">THE BIG PICTURE, BEFORE THE IQs</span>
+            <span class="chapter-counter"><span id="chapter-number">01</span> <span>/ 05</span></span>
+          </div>
+          <div id="chapters" class="chapters"></div>
+          <div class="story-note"><span class="note-icon" aria-hidden="true">&#8594;</span><span id="overview-outcome"></span></div>
+        </section>
+      </div>
+      <footer class="transport overview-transport">
+        <span id="playback-label" class="transport-title">PRESENTATION READY</span>
+        <div class="transport-main">
+          <button id="play" class="play-button" aria-label="Play presentation"><svg id="play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m9 5 11 7-11 7Z"/></svg></button>
+          <button id="restart" class="icon-button" aria-label="Restart presentation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10a8 8 0 1 1 .5 6M4 4v6h6"/></svg></button>
+          <span id="elapsed" class="time">0:00</span>
+          <input id="scrubber" type="range" min="0" max="120" step="0.1" value="0" aria-label="Presentation position" />
+          <span class="time total-time">2:00</span>
+        </div>
+        <div class="view-controls"><button id="motion" class="icon-button" aria-label="Reduce animation" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h11a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h6"/></svg></button></div>
+      </footer>
+      <p class="architecture-note">A conceptual view of connected context, not a single data store or a claim that every IQ uses every source. Access, integrations and capabilities depend on the service and configuration.</p>
+      <p class="keyboard-hint">SPACE to play / pause <span>&middot;</span> Select a chapter to jump</p>
+      <p id="announcement" class="sr-only" aria-live="polite"></p>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
