@@ -10,7 +10,7 @@
     "build:presentations": "node scripts/build-presentations.mjs",
     "build": "node scripts/build.mjs",
     "preview": "vite preview --host 127.0.0.1",
-    "test": "node --test tests/navigation.test.js presentations/iq-overview/src/timeline.test.js presentations/work-iq/src/timeline.test.js presentations/fabric-iq/src/timeline.test.js presentations/foundry-iq/src/retrieval.test.js presentations/web-iq/src/timeline.test.js presentations/security-governance/src/timeline.test.js"
+    "test": "node --test tests/navigation.test.js presentations/iq-overview/src/timeline.test.js presentations/work-iq/src/timeline.test.js presentations/fabric-iq/src/timeline.test.js presentations/foundry-iq/src/retrieval.test.js presentations/web-iq/src/timeline.test.js presentations/security-governance/src/timeline.test.js presentations/agent-365/src/timeline.test.js"
   },
   "dependencies": { "three": "0.180.0" },
   "devDependencies": {

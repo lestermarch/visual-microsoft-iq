@@ -4,6 +4,7 @@ import { chapters as fabricChapters } from '../presentations/fabric-iq/src/timel
 import { chapters as foundryChapters } from '../presentations/foundry-iq/src/timeline.js';
 import { chapters as webChapters } from '../presentations/web-iq/src/timeline.js';
 import { chapters as securityChapters } from '../presentations/security-governance/src/timeline.js';
+import { chapters as agentChapters } from '../presentations/agent-365/src/timeline.js';
 
 export const presentations = [
   { id: 'iq-overview', title: 'Overview', color: 'azure', chapters: overviewChapters },
@@ -12,6 +13,7 @@ export const presentations = [
   { id: 'foundry-iq', title: 'Foundry IQ', color: 'violet', chapters: foundryChapters },
   { id: 'web-iq', title: 'Web IQ', color: 'cyan', chapters: webChapters },
   { id: 'security-governance', title: 'Security', color: 'violet', chapters: securityChapters },
+  { id: 'agent-365', title: 'Agent 365', color: 'azure', chapters: agentChapters },
 ];
 
 export const steps = presentations.flatMap((presentation) =>

@@ -1,8 +1,8 @@
 # Microsoft IQ presenter - v01
 
 A single, self-contained presenter app starting with a Microsoft IQ overview,
-then Work IQ, Fabric IQ, Foundry IQ and Web IQ, followed by a Security &
-governance closing page. The 32 subsections
+then Work IQ, Fabric IQ, Foundry IQ and Web IQ, followed by Security & governance
+and an Agent 365 finale. The 38 subsections
 advance at the presenter's pace.
 Ambient 3D animations continue while the narrative remains on the selected step.
 The four original standalone presentations are preserved outside this folder.
@@ -10,17 +10,17 @@ The four original standalone presentations are preserved outside this folder.
 ## Present
 
 Open `dist\index.html` in a modern WebGL-enabled browser. The production build
-includes all six presentations and works offline, with no server, accounts,
+includes all seven presentations and works offline, with no server, accounts,
 fonts, images or external APIs required.
 
 - **Next / Previous** move through every subsection, including IQ boundaries.
 - **Space, Right or Page Down** advance; **Left, Page Up or Shift+Space** go back.
-- **Home** restarts at the overview; **End** jumps to the final Security subsection.
+- **Home** restarts at the overview; **End** jumps to Agent 365's complete picture.
 - **F** toggles fullscreen. **Reduce motion** freezes ambient animation.
 - **Dark mode / Light mode** switches the complete deck's palette without moving
   the selected subsection. Light remains the default; `?clawpilotTheme=dark`
   opens directly in dark mode. The choice stays in effect while the app is open.
-- The top menu jumps to the first subsection of the overview, any IQ or Security.
+- The top menu jumps to the overview, any IQ, Security or Agent 365.
 - Chapter cards inside a presentation remain clickable and update the global
   navigation. Foundry's query and Web's grounding example also stay available.
 
@@ -48,7 +48,7 @@ npm run build
 npm run preview
 ```
 
-`npm run dev` first compiles the six presentation documents. After editing a
+`npm run dev` first compiles the seven presentation documents. After editing a
 presentation's source or the shared bridge, run `npm run build:presentations`
 again; the development server observes the generated documents. Shell changes
 are handled directly by Vite. `npm run build` always rebuilds everything.
@@ -99,7 +99,7 @@ their distinct roles. Original SVG symbols replace the reference's portrait and
 product artwork. The opening retains a two-minute standalone playback option;
 the combined presenter advances manually.
 
-## Security & governance closing page
+## Security & governance page
 
 The centre agent is encompassed by Work IQ, Fabric IQ, Foundry IQ and Web IQ
 within Microsoft IQ. An outer visual layer shows five existing, complementary
@@ -117,3 +117,30 @@ distinguished from individual Defender services.
 
 Product descriptions were grounded in the Microsoft security platform overview:
 https://learn.microsoft.com/en-us/security/zero-trust/security-platform
+
+## Agent 365 finale
+
+The final page expands the previous security picture into a seven-agent network.
+Each illustrated agent has faint inner IQ and outer security/governance point
+spheres, reusing the previous security page's sphere construction; one larger
+example labels the layers. A wider Agent 365 envelope
+encompasses the fleet. The six chapters cover the layered agent, agents at scale,
+Observe, Govern, Secure, then the complete picture. The selected control receives
+thin animated signal paths, distinguished from intra-agent links by brightness
+rather than thickness.
+In the complete picture, the envelope becomes a three-dimensional point sphere:
+the detailed layers fade and interconnected agent atoms float inside it.
+Returning to an earlier chapter restores the labelled layers. Both colour modes,
+reduced motion, page fades and manual navigation remain available.
+
+This is a conceptual recap, not live telemetry, a mandatory network topology or
+a claim that every agent uses every IQ. Agent 365 extends existing administration,
+identity, security and compliance capabilities; it does not replace them or
+automatically guarantee protection. Microsoft and third-party agents have
+different registration and integration paths, and features depend on supported
+integrations, configuration and licensing. The network uses original illustrative
+symbols, not vendor logos or claims about specific partner integrations.
+
+Product descriptions were grounded in:
+- https://learn.microsoft.com/office365/servicedescriptions/microsoft-agent-365/microsoft-agent-365
+- https://learn.microsoft.com/microsoft-agent-365/connect-existing-agents

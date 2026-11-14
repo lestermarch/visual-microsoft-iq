@@ -42,7 +42,7 @@ body { overflow: hidden; }
 .suite-next { background: var(--cp-azure); border-color: var(--cp-azure); color: var(--cp-accent-fg); min-width: 175px; justify-content: space-between; font-weight: 600; }
 .suite-next:hover:not(:disabled) { background: var(--cp-accent-hover); color: var(--cp-accent-fg); }
 .suite-progress { height: 3px; background: var(--cp-border); grid-column: 1 / -1; margin: 0 -28px; }
-.suite-progress > span { display: block; height: 100%; background: linear-gradient(90deg, var(--cp-azure), var(--cp-teal)); transform: scaleX(var(--suite-progress, .03125)); transform-origin: left; transition: transform .2s; }
+.suite-progress > span { display: block; height: 100%; background: linear-gradient(90deg, var(--cp-azure), var(--cp-teal)); transform: scaleX(var(--suite-progress, .026316)); transform-origin: left; transition: transform .2s; }
 .suite-control-error { position: fixed; bottom: 105px; left: 50%; transform: translateX(-50%); padding: 12px 20px; border: 1px solid var(--cp-danger); border-radius: 8px; color: var(--cp-danger); background: var(--cp-surface); z-index: 5; font-size: 13px; }
 @media (max-height: 820px) and (min-width: 1000px) {
   .suite-header { padding-top: 8px; padding-bottom: 8px; }
@@ -57,6 +57,11 @@ body { overflow: hidden; }
 @media (min-width: 761px) and (max-width: 950px) {
   .suite-menu { gap: 4px; }
   .suite-menu button { padding: 8px 5px; font-size: 10.5px; gap: 5px; }
+}
+@media (min-width: 761px) and (max-width: 1200px) {
+  .suite-header { grid-template-columns: 1fr auto; }
+  .suite-menu { grid-column: 1 / -1; grid-row: 2; }
+  .suite-tools { grid-column: 2; grid-row: 1; }
 }
 @media (max-width: 760px) {
   .suite-header { grid-template-columns: 1fr auto; gap: 10px; padding: 10px 14px; }
@@ -73,8 +78,8 @@ body { overflow: hidden; }
   .suite-progress { margin: 0 -14px; }
 }
 @media (max-width: 480px) {
-  .suite-menu { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .suite-menu button { justify-content: center; }
+  .suite-menu { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .suite-menu button { justify-content: center; padding: 8px 3px; font-size: 9px; gap: 3px; }
 }
 @media (max-width: 360px) {
   .suite-brand { gap: 7px; font-size: 11px; }

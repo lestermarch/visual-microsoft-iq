@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { chapters } from './timeline.js';
 import { intelligenceLayers, icon } from './symbols.js';
+import { createPointSphere } from '../../../src/point-sphere.js';
 
 const INTELLIGENCE_RADIUS = 2.02;
 const SECURITY_RADIUS = 3.22;
@@ -11,23 +12,6 @@ function circlePoints(radius, start = 0, length = FULL_CIRCLE) {
     const angle = start + length * index / 180;
     return new THREE.Vector3(Math.cos(angle) * radius, Math.sin(angle) * radius, 0);
   });
-}
-
-function createPointSphere(radius, count, material) {
-  const positions = [];
-  const goldenAngle = Math.PI * (3 - Math.sqrt(5));
-  for (let index = 0; index < count; index++) {
-    const y = 1 - 2 * (index + .5) / count;
-    const ringRadius = Math.sqrt(1 - y * y);
-    positions.push(
-      radius * Math.cos(index * goldenAngle) * ringRadius,
-      radius * y,
-      radius * Math.sin(index * goldenAngle) * ringRadius,
-    );
-  }
-  const geometry = new THREE.BufferGeometry();
-  geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-  return new THREE.Points(geometry, material);
 }
 
 export function createSecurityScene(container, labelLayer) {

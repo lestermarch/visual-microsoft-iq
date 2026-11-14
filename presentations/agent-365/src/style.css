@@ -1,0 +1,99 @@
+@import '../../work-iq/src/style.css';
+
+.agent365-presentation h1 { font-size: clamp(38px, 4.1vw, 64px); letter-spacing: -2.8px; }
+.agent365-presentation .headline { padding-top: 28px; }
+.agent365-presentation .hero-description { font-size: clamp(15px, 1.35vw, 22px); }
+.agent365-presentation .main-content { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 40px; }
+.agent365-visual { position: relative; height: clamp(485px, 62vh, 575px); min-width: 0; }
+.fleet-stage { position: absolute; inset: 0 0 112px; }
+.fleet-labels { position: absolute; inset: 0; pointer-events: none; }
+.fleet-labels > div { position: absolute; top: 0; left: 0; text-align: center; }
+.control-plane-title { padding: 8px 18px; border: 1px solid color-mix(in srgb, var(--cp-violet) 35%, var(--cp-border)); border-radius: 12px; background: var(--cp-panel-strong); box-shadow: var(--cp-shadow); white-space: nowrap; }
+.control-plane-title strong { display: block; font-size: 21px; font-weight: 600; letter-spacing: -.5px; color: var(--cp-azure); }
+.control-plane-title small { display: block; font-size: 6px; letter-spacing: 1.4px; margin-top: 4px; color: var(--cp-text-soft); }
+.fleet-control { display: flex; align-items: center; gap: 7px; padding: 6px 11px; border: 1px solid var(--cp-border); border-radius: 8px; background: var(--cp-panel-strong); color: var(--control-color); opacity: .65; transition: opacity .6s, border-color .6s; }
+.fleet-control svg { width: 20px; height: 20px; }
+.fleet-control strong { font-size: 12px; font-weight: 600; }
+.fleet-control.highlighted { opacity: 1; border-color: var(--control-color); }
+.fleet-agent { display: flex; flex-direction: column; align-items: center; gap: 4px; opacity: .32; transition: opacity .6s; }
+.fleet-agent-icon { width: 25px; height: 25px; display: grid; place-items: center; color: var(--cp-azure); border: 1px solid var(--cp-border-strong); background: var(--cp-surface); border-radius: 50%; }
+.fleet-agent-icon svg { width: 15px; height: 15px; }
+.fleet-agent strong { color: var(--cp-text-muted); font-size: 8px; font-weight: 500; background: var(--cp-bg); padding: 1px 4px; border-radius: 3px; }
+.fleet-agent.highlighted { opacity: 1; }
+.hero-agent { gap: 0; }
+.hero-agent .fleet-agent-icon { width: 66px; height: 66px; background: linear-gradient(145deg, var(--cp-core-start), var(--cp-core-end)); color: var(--cp-white); border: 0; box-shadow: 0 0 0 4px var(--cp-panel), 0 8px 24px var(--cp-core-shadow); padding-bottom: 16px; }
+.hero-agent .fleet-agent-icon svg { width: 24px; height: 24px; }
+.hero-agent strong { position: absolute; top: 38px; font-size: 15px; font-weight: 600; padding: 0; background: var(--cp-transparent); color: var(--cp-white); }
+.hero-iq-label { padding: 4px 8px; background: var(--cp-panel-strong); border-radius: 6px; white-space: nowrap; }
+.hero-iq-label strong { display: block; font-size: 12px; font-weight: 600; color: var(--cp-cyan); }
+.hero-iq-label small { display: block; font-size: 5px; color: var(--cp-text-soft); margin-top: 3px; }
+.hero-security-label { display: flex; align-items: center; gap: 5px; padding: 3px 7px; border-radius: 6px; background: var(--cp-panel-strong); color: var(--cp-teal); white-space: nowrap; }
+.hero-security-label svg { width: 14px; height: 14px; }
+.hero-security-label strong { font-size: 10px; font-weight: 600; }
+.hero-iq-label, .hero-security-label { transition: opacity .8s; }
+.fleet-labels.is-finale .fleet-agent { opacity: 0; }
+.fleet-labels.is-finale .fleet-control { opacity: .14; }
+.fleet-labels.is-finale .hero-iq-label, .fleet-labels.is-finale .hero-security-label { opacity: .08; }
+.fleet-layer-key { position: absolute; bottom: 91px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; white-space: nowrap; color: var(--cp-text-soft); font-size: 7px; letter-spacing: .6px; }
+.fleet-layer-key b { color: var(--cp-text-muted); font-weight: 600; }
+.fleet-layer-key span { color: var(--cp-cyan); }
+.platform-rail { position: absolute; bottom: 56px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; gap: 6px; white-space: nowrap; }
+.platform-rail > span { font-size: 5px; color: var(--cp-text-soft); letter-spacing: .6px; margin-right: 4px; }
+.platform-rail b { font-size: 7px; font-weight: 500; color: var(--cp-text-muted); background: var(--cp-panel-strong); border: 1px solid var(--cp-border); border-radius: 5px; padding: 5px 7px; }
+.agent365-visual .scene-caption { bottom: 0; width: 95%; justify-content: center; white-space: normal; font-size: 10px; line-height: 1.7; }
+.agent365-visual .scene-caption strong { font-size: 12px; font-weight: 600; }
+.agent365-visual .caption-line { flex-shrink: 0; }
+.agent365-presentation .story { padding: 0; }
+.agent365-presentation .story-heading .eyebrow { font-size: 8px; letter-spacing: 1.3px; }
+.agent365-presentation .chapters { gap: 7px; }
+.agent365-presentation .chapter { grid-template-columns: 31px minmax(0, 1fr) 14px; column-gap: 10px; padding: 10px 14px; }
+.agent365-presentation .chapter-icon { width: 31px; height: 31px; }
+.agent365-presentation .chapter-icon svg { width: 20px; height: 20px; }
+.agent365-presentation .chapter-title { font-size: 18px; }
+.agent365-presentation .chapter-summary { font-size: 10px; }
+.agent365-presentation .chapter-kicker { font-size: 7px; letter-spacing: .8px; }
+.agent365-presentation .chapter-text { font-size: 13px; line-height: 1.5; }
+.agent365-presentation .active .chapter-text { max-height: 180px; }
+.agent365-presentation .story-note { font-size: 8px; line-height: 1.5; text-align: center; }
+.agent365-presentation .architecture-note { margin: 8px 0 4px; color: var(--cp-text-soft); font-size: 8px; text-align: center; line-height: 1.5; }
+@media (max-height: 820px) and (min-width: 1000px) {
+  .agent365-visual { height: 460px; }
+  .agent365-presentation .chapter { padding: 8px 12px; }
+  .agent365-presentation .chapter-title { font-size: 16px; }
+  .agent365-presentation .chapter-text { font-size: 12px; }
+}
+@media (max-width: 1100px) and (min-width: 761px) {
+  .agent365-presentation .main-content { gap: 24px; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); }
+  .agent365-presentation .chapter-title { font-size: 16px; }
+  .agent365-presentation .chapter-kicker { letter-spacing: .4px; font-size: 6px; }
+}
+@media (max-height: 650px) and (min-width: 1000px) {
+  .agent365-presentation .chapter { padding-top: 5px; padding-bottom: 5px; }
+  .agent365-presentation .story-heading { margin-bottom: 8px; }
+  .agent365-presentation .story-note { margin-top: 8px; }
+}
+@media (max-width: 760px) {
+  .agent365-presentation .headline { display: block; }
+  .agent365-presentation .headline h1 { font-size: clamp(35px, 7vw, 51px); letter-spacing: -1.8px; }
+  .agent365-presentation .hero-description { font-size: 13px; margin: 10px 0 0; }
+  .agent365-presentation .main-content { grid-template-columns: 1fr; gap: 22px; }
+  .agent365-visual { height: clamp(415px, 85vw, 525px); }
+  .fleet-stage { inset: 0 -4px 122px; }
+  .control-plane-title strong { font-size: 26px; }
+  .control-plane-title small { font-size: 9px; }
+  .fleet-control strong { font-size: 16px; }
+  .hero-iq-label strong { font-size: 17px; }
+  .hero-security-label strong { font-size: 14px; }
+  .fleet-agent strong { font-size: 11px; }
+  .fleet-layer-key { bottom: 108px; font-size: 5.5px; gap: 5px; letter-spacing: .2px; }
+  .platform-rail { bottom: 63px; flex-wrap: wrap; white-space: normal; width: 98%; gap: 4px; }
+  .platform-rail > span { width: 100%; text-align: center; }
+  .platform-rail b { font-size: 7px; }
+  .agent365-presentation .chapter { padding: 12px; }
+  .agent365-presentation .chapter-title { font-size: 18px; }
+  .agent365-presentation .chapter-text { font-size: 13px; }
+  .agent365-presentation .active .chapter-text { max-height: 200px; }
+  .agent365-visual .scene-caption { font-size: 9px; }
+  .agent365-visual .scene-caption strong { font-size: 11px; }
+  .agent365-presentation .architecture-note { font-size: 7px; }
+}

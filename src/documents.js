@@ -4,6 +4,7 @@ import fabric from '../.generated/fabric-iq/index.html?raw';
 import foundry from '../.generated/foundry-iq/index.html?raw';
 import web from '../.generated/web-iq/index.html?raw';
 import security from '../.generated/security-governance/index.html?raw';
+import agents from '../.generated/agent-365/index.html?raw';
 
 export const documents = {
   'iq-overview': overview,
@@ -12,4 +13,5 @@ export const documents = {
   'foundry-iq': foundry,
   'web-iq': web,
   'security-governance': security,
+  'agent-365': agents,
 };
