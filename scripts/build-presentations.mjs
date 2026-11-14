@@ -4,7 +4,7 @@ import { build } from 'vite';
 import { viteSingleFile } from 'vite-plugin-singlefile';
 
 const projectRoot = dirname(dirname(fileURLToPath(import.meta.url)));
-const presentationIds = ['work-iq', 'fabric-iq', 'foundry-iq', 'web-iq'];
+const presentationIds = ['work-iq', 'fabric-iq', 'foundry-iq', 'web-iq', 'security-governance'];
 
 for (const id of presentationIds) {
   await build({

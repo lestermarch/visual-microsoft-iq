@@ -1,0 +1,99 @@
+@import '../../work-iq/src/style.css';
+
+.security-presentation .headline { padding-top: 30px; }
+.security-presentation h1 { font-size: clamp(44px, 4.2vw, 66px); letter-spacing: -2.8px; }
+.security-presentation .hero-description { font-size: clamp(16px, 1.4vw, 22px); }
+.security-presentation .main-content { grid-template-columns: minmax(0, 1.17fr) minmax(0, .83fr); gap: 38px; min-height: 500px; }
+.security-visual { position: relative; height: clamp(485px, 62vh, 590px); min-width: 0; isolation: isolate; }
+.security-visual .orbit-label { top: 0; font-size: 7px; letter-spacing: 1.6px; }
+.security-stage { position: absolute; inset: 17px 0 76px; }
+.security-labels { position: absolute; inset: 0; pointer-events: none; }
+.security-agent {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  width: 94px; height: 94px; z-index: 5; border-radius: 50%;
+  background: linear-gradient(145deg, var(--cp-core-start), var(--cp-core-end)); color: var(--cp-white);
+  box-shadow: 0 0 0 5px var(--cp-panel), 0 0 0 6px color-mix(in srgb, var(--cp-cyan) 35%, var(--cp-transparent)), 0 8px 32px var(--cp-core-shadow);
+}
+.security-agent svg { width: 23px; height: 23px; margin-bottom: 3px; }
+.security-agent strong { font-size: 23px; font-weight: 600; letter-spacing: -.7px; }
+.security-agent small { font-size: 5px; letter-spacing: 1.3px; margin-top: 5px; opacity: .8; }
+.iq-node { position: absolute; left: 0; top: 0; width: 91px; border: 1px solid color-mix(in srgb, var(--node-color) 32%, var(--cp-border)); border-radius: 9px; padding: 8px 5px; text-align: center; background: var(--cp-panel-strong); z-index: 4; box-shadow: var(--cp-shadow); }
+.iq-node strong { display: block; color: var(--node-color); font-size: 12px; font-weight: 600; }
+.iq-node small { display: block; font-size: 7px; color: var(--cp-text-soft); margin-top: 3px; }
+.intelligence-heading { position: absolute; left: 0; top: 0; text-align: center; z-index: 4; background: var(--cp-bg); padding: 3px 8px; border-radius: 6px; white-space: nowrap; }
+.intelligence-heading strong { display: block; color: var(--cp-azure); font-size: 14px; letter-spacing: -.3px; font-weight: 600; }
+.intelligence-heading small { display: block; font-size: 5px; color: var(--cp-text-soft); letter-spacing: 1px; margin-top: 3px; }
+.security-node { position: absolute; left: 0; top: 0; display: flex; flex-direction: column; align-items: center; gap: 5px; z-index: 4; opacity: .62; transition: opacity .6s; width: 84px; }
+.security-node-icon { width: 39px; height: 39px; display: grid; place-items: center; border-radius: 12px; background: var(--cp-panel-strong); color: var(--node-color); border: 1px solid var(--cp-border-strong); box-shadow: var(--cp-shadow); transition: border-color .6s, box-shadow .6s; }
+.security-node-icon svg { width: 25px; height: 25px; }
+.security-node strong { font-size: 11px; font-weight: 600; color: var(--cp-text-muted); background: var(--cp-bg); padding: 2px 6px; border-radius: 4px; }
+.security-node.highlighted { opacity: 1; }
+.security-node.highlighted .security-node-icon { border-color: var(--node-color); box-shadow: 0 0 0 4px color-mix(in srgb, var(--node-color) 10%, var(--cp-transparent)); }
+.security-node.highlighted strong { color: var(--node-color); }
+.security-layer-key { position: absolute; bottom: 44px; left: 50%; transform: translateX(-50%); display: flex; gap: 9px; align-items: center; white-space: nowrap; color: var(--cp-text-soft); font-size: 7px; letter-spacing: .8px; }
+.security-layer-key b { color: var(--cp-text-muted); font-weight: 600; }
+.security-layer-key span { color: var(--cp-cyan); }
+.security-visual .scene-caption { bottom: 0; width: 95%; font-size: 9px; white-space: normal; justify-content: center; line-height: 1.7; }
+.security-visual .scene-caption strong { font-size: 11px; font-weight: 600; color: var(--cp-text-muted); }
+.security-visual .caption-line { flex-shrink: 0; }
+.security-presentation .story { padding: 0; }
+.security-presentation .story-heading .eyebrow { font-size: 8px; letter-spacing: 1.5px; }
+.security-presentation .chapter { padding: 13px 16px; grid-template-columns: 35px minmax(0, 1fr) 16px; column-gap: 12px; }
+.security-presentation .chapter-icon { width: 34px; height: 34px; }
+.security-presentation .chapter-icon svg { width: 22px; height: 22px; }
+.security-presentation .chapter-title { font-size: 19px; }
+.security-presentation .chapter-summary { font-size: 10px; }
+.security-presentation .chapter-text { font-size: 13px; line-height: 1.5; }
+.security-presentation .active .chapter-text { max-height: 140px; }
+.security-presentation .chapter-kicker { font-size: 7px; letter-spacing: 1.1px; }
+.security-presentation .story-note { font-size: 8px; margin-top: 14px; }
+.security-outcome { color: var(--cp-azure); font-weight: 600; }
+.security-presentation .architecture-note { margin: 7px 0 4px; text-align: center; font-size: 8px; line-height: 1.5; color: var(--cp-text-soft); }
+@media (max-height: 820px) and (min-width: 1000px) {
+  .security-presentation .headline { padding-top: 16px; }
+  .security-presentation h1 { font-size: 49px; }
+  .security-presentation .main-content { min-height: 0; gap: 30px; }
+  .security-visual { height: 460px; }
+  .security-stage { inset: 17px 0 72px; }
+  .security-agent { width: 82px; height: 82px; }
+  .security-agent strong { font-size: 21px; }
+  .security-agent svg { width: 20px; height: 20px; }
+  .security-presentation .chapter { padding: 11px 14px; }
+  .security-presentation .chapter-title { font-size: 17px; }
+  .security-presentation .chapter-text { font-size: 12px; }
+  .security-presentation .chapters { gap: 7px; }
+  .security-presentation .architecture-note { font-size: 7px; }
+}
+@media (max-width: 1100px) and (min-width: 761px) {
+  .security-presentation .main-content { gap: 20px; }
+  .security-presentation .chapter-title { font-size: 16px; }
+  .security-presentation .chapter-kicker { letter-spacing: .5px; }
+  .security-presentation .chapter { column-gap: 8px; grid-template-columns: 30px minmax(0,1fr) 13px; }
+  .security-presentation .chapter-icon { width: 29px; height: 29px; }
+}
+@media (max-width: 760px) {
+  .security-presentation .headline { align-items: flex-start; gap: 14px; }
+  .security-presentation h1 { font-size: clamp(38px, 7vw, 54px); letter-spacing: -2px; }
+  .security-presentation .hero-description { font-size: 12px; margin-top: 24px; }
+  .security-presentation .main-content { grid-template-columns: 1fr; gap: 24px; min-height: 0; }
+  .security-visual { height: clamp(423px, 83vw, 560px); }
+  .security-stage { inset: 25px -5px 70px; }
+  .security-agent { width: 74px; height: 74px; }
+  .security-agent strong { font-size: 18px; }
+  .security-agent svg { width: 18px; height: 18px; }
+  .security-agent small { font-size: 4px; }
+  .security-presentation .chapter { padding: 13px; }
+  .security-presentation .chapter-title { font-size: 17px; }
+  .security-presentation .chapter-summary { font-size: 10px; }
+  .security-presentation .chapter-text { font-size: 13px; }
+  .security-layer-key { font-size: 6px; gap: 7px; }
+  .security-visual .scene-caption { font-size: 8px; }
+  .security-visual .scene-caption strong { font-size: 10px; }
+  .security-presentation .architecture-note { font-size: 7px; }
+}
+@media (max-width: 420px) {
+  .security-presentation .headline { display: block; }
+  .security-presentation .hero-description { margin: 8px 0 0; font-size: 12px; }
+  .security-presentation .hero-description br { display: none; }
+}
