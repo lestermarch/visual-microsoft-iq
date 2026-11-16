@@ -7,6 +7,15 @@ advance at the presenter's pace.
 Ambient 3D animations continue while the narrative remains on the selected step.
 The four original standalone presentations are preserved outside this folder.
 
+## Public website
+
+Present online at https://lestermarch.github.io/visual-microsoft-iq/.
+
+The GitHub Pages workflow tests and builds pull requests. Pushes to `main`
+also publish only the generated `dist/` site; development files and source
+archives are not part of the deployed artifact. The repository and website
+are public. The workflow can also be started manually from the Actions tab.
+
 ## Present
 
 Open `dist\index.html` in a modern WebGL-enabled browser. The production build
@@ -41,7 +50,7 @@ the current scene's ambient animation and interactive examples.
 Use Node.js 22.12 or later.
 
 ```powershell
-npm install
+npm ci
 npm run dev
 npm test
 npm run build
@@ -65,6 +74,7 @@ are handled directly by Vite. `npm run build` always rebuilds everything.
 | `src/documents.js` | Imports the generated, self-contained HTML documents |
 | `presentations/` | Editable original visuals, content and focused tests |
 | `scripts/` | Builds the presentation documents, then the offline app |
+| `.github/workflows/pages.yml` | Tests, builds and deploys the static site to GitHub Pages |
 | `tests/navigation.test.js` | Sequence, boundary, jump and keyboard behaviour |
 | `.generated/` | Rebuildable presentation HTML, not hand-edited |
 | `dist/index.html` | Finished offline app |
@@ -83,6 +93,8 @@ preview qualifications still apply.
 
 Comments are reserved for non-obvious intent. Navigation rules, rendering,
 integration and build responsibilities are separated into named modules.
+The build order is explicit and derives presentation IDs from the catalog,
+so adding a page does not require maintaining a second build list.
 
 ## Microsoft IQ opening overview
 
